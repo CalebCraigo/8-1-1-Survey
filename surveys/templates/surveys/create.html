@@ -1,0 +1,17 @@
+{% extends 'surveys/base.html' %}
+{% block content %}
+
+{% if user.is_superuser %}
+<form method='post'>
+  {% csrf_token %}
+  <table>
+    {{form}}
+    {{formset}}
+  </table>
+  <button>Submit</button>
+</form>
+{% else %}
+<p>Admins log in here</p>
+<a href='{url "accounts:login"}'>Log In</a>
+{% endblock %}
+{% endif %}
