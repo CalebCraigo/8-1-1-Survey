@@ -11,7 +11,8 @@
   <button>Submit</button>
 </form>
 {% else %}
-<p>Admins log in here</p>
-<a href='{url "accounts:login"}'>Log In</a>
-{% endblock %}
+<p>Log in to add a question to the poll</p>
+<a href='{% url "accounts/login/" %}'>Log In</a>
 {% endif %}
+<a href="{% url 'logout' %}"><span>| Log Out |</span></a>
+{% endblock %}
