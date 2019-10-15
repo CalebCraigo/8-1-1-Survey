@@ -8,7 +8,9 @@
 
 <ul>
   {% for choice in question.choice_set.all %}
-    <li>{{choice.choice_text }}<span> {{choice.votes}}</span><li>
+    <li>{{choice.choice_text }}<li><span> {{choice.votes}}</span>
   {% endfor %}
 </ul>
+
+<a href='{% url "surveys:index" %}'>Back</a>
 {% endblock %}
